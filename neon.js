@@ -21,7 +21,7 @@
     const cv = D.getElementById('nx-fx'); if (!cv) return {reset() {}};
     const cx = cv.getContext('2d', {alpha: true});
     let W = 0, Hh = 0, dpr = 1, parts = [], geos = [], raf = 0, last = 0, mx = .5, my = .5;
-    const COLS = ['0,246,255', '168,85,255', '61,203,255', '255,46,154', '127,91,255'];
+    const COLS = ['255,31,61', '200,16,46', '255,75,43', '255,122,26', '122,10,26'];
     function size() {
       dpr = Math.min(H.dataset.fx === 'high' ? 1.5 : 1, devicePixelRatio || 1);
       W = innerWidth; Hh = innerHeight; cv.width = W * dpr | 0; cv.height = Hh * dpr | 0; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -47,12 +47,12 @@
         const k = 1 / (2.6 - z2); return [ox + x1 * g.r * k * 2, oy + y1 * g.r * k * 2, z2]; });
       cx.lineWidth = 1;
       const grd = cx.createLinearGradient(ox - g.r, oy - g.r, ox + g.r, oy + g.r);
-      grd.addColorStop(0, 'rgba(0,246,255,.30)'); grd.addColorStop(1, 'rgba(168,85,255,.22)');
+      grd.addColorStop(0, 'rgba(255,31,61,.30)'); grd.addColorStop(1, 'rgba(200,16,46,.22)');
       cx.strokeStyle = grd; cx.beginPath();
       for (let i = 0; i < g.n; i++) { const p = P[i], q = P[(i + 1) % g.n]; cx.moveTo(p[0], p[1]); cx.lineTo(q[0], q[1]);
         cx.moveTo(p[0], p[1]); cx.lineTo(P[g.n][0], P[g.n][1]); cx.moveTo(p[0], p[1]); cx.lineTo(P[g.n + 1][0], P[g.n + 1][1]); }
       cx.stroke();
-      cx.fillStyle = 'rgba(0,246,255,.55)';
+      cx.fillStyle = 'rgba(255,31,61,.55)';
       for (const p of P) { cx.beginPath(); cx.arc(p[0], p[1], 1.4, 0, 6.283); cx.fill(); }
     }
     function frame(t) {

@@ -23,6 +23,6 @@
     if (!v) return; v = v.trim(); if (cur === null) cur = v; else if (v !== cur) location.reload(); }).catch(() => {});
   poll(); setInterval(poll, 20000);
   addEventListener('DOMContentLoaded', () => { const b = document.createElement('div'); b.id = 'nx-previewtag';
-    b.textContent = 'LIVE PREVIEW · auto-refreshes'; b.style.cssText = 'position:fixed;right:10px;bottom:10px;z-index:99;font:700 10px/1 Rajdhani,sans-serif;letter-spacing:.2em;color:#00F6FF;padding:6px 10px;border:1px solid rgba(0,246,255,.4);border-radius:999px;background:rgba(5,5,5,.75);pointer-events:none';
+    b.textContent = 'LIVE PREVIEW · auto-refreshes'; b.style.cssText = 'position:fixed;right:10px;bottom:10px;z-index:99;font:700 10px/1 Rajdhani,sans-serif;letter-spacing:.2em;color:#ff1f3d;padding:6px 10px;border:1px solid rgba(255,31,61,.45);border-radius:999px;background:rgba(5,5,5,.75);pointer-events:none';
     document.body.appendChild(b); });
 })();
