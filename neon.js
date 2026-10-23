@@ -91,7 +91,7 @@
   const tabs = D.querySelector('.tabs'), ink = D.querySelector('.nx-ink');
   function moveInk() {
     const on = tabs && tabs.querySelector('button.on'); if (!on || !ink) return;
-    ink.style.width = (on.offsetWidth - 28) + 'px'; ink.style.transform = `translate3d(${on.offsetLeft + 14}px,0,0)`;
+    ink.style.width = (on.offsetWidth - 28) + 'px'; ink.style.transform = `translate3d(${on.offsetLeft + 14}px,${on.offsetTop + on.offsetHeight + 1}px,0)`;
     if (tabs.scrollWidth > tabs.clientWidth) on.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
   }
   if (tabs) new MutationObserver(moveInk).observe(tabs, {subtree: true, attributes: true, attributeFilter: ['class']});
