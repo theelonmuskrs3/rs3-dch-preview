@@ -62,7 +62,7 @@ a{color:#ff6b7d;text-decoration:none;text-shadow:0 0 12px rgba(255,31,61,.25)} a
   radial-gradient(70% 50% at 0% 0%,rgba(80,10,16,.25) 0,transparent 60%),
   radial-gradient(70% 50% at 100% 10%,rgba(120,40,10,.14) 0,transparent 60%),
   linear-gradient(180deg,#0a0808,#050505 50%,#080404)}
-.nx-stone{position:absolute;inset:0;opacity:.32;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .42  0 0 0 0 .38  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px 220px}
+.nx-stone{position:absolute;inset:0;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .42  0 0 0 0 .38  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px 220px}
 .nx-aurora{position:absolute;inset:-20%;opacity:.6}
 .nx-aurora i{position:absolute;width:70vmax;height:40vmax;border-radius:50%;will-change:transform;
   background:radial-gradient(closest-side,rgba(200,16,46,.16),transparent);animation:nxAur 38s var(--ease) infinite alternate}
@@ -71,13 +71,11 @@ a{color:#ff6b7d;text-decoration:none;text-shadow:0 0 12px rgba(255,31,61,.25)} a
 .nx-aurora i:nth-child(3){left:25%;bottom:-10%;background:radial-gradient(closest-side,rgba(255,31,61,.12),transparent);animation-duration:54s;animation-delay:-20s}
 @keyframes nxAur{0%{transform:translate3d(0,0,0) scale(1) rotate(0)}50%{transform:translate3d(8vw,4vh,0) scale(1.15) rotate(8deg)}100%{transform:translate3d(-6vw,-3vh,0) scale(.95) rotate(-6deg)}}
 /* arcane rune circle (drawn in index.html) */
-.nx-runes{position:absolute;width:min(120vmin,1100px);aspect-ratio:1;left:50%;top:56%;transform:translate(-50%,-50%);opacity:.16;
-  filter:drop-shadow(0 0 6px rgba(255,31,61,.6))}
+.nx-runes{position:absolute;width:min(120vmin,1100px);aspect-ratio:1;left:50%;top:56%;transform:translate(-50%,-50%);opacity:.2;
+  background:radial-gradient(circle,rgba(255,31,61,.18),transparent 62%);border-radius:50%}
 .nx-runes svg{width:100%;height:100%;overflow:visible}
-.nx-runes .rc1,.nx-runes .rc2,.nx-runes .rc3{transform-box:view-box;transform-origin:50% 50%;will-change:transform}
-.nx-runes .rc1{animation:nxSpin 140s linear infinite}
-.nx-runes .rc2{animation:nxSpin 95s linear infinite reverse}
-.nx-runes .rc3{animation:nxSpin 60s linear infinite}
+.nx-runes svg{will-change:transform;animation:nxSpin 160s linear infinite}
+.nx-runes2 svg{animation-duration:110s;animation-direction:reverse}
 .nx-runes2{width:min(60vmin,520px);left:88%;top:12%;opacity:.07}
 .nx-fog{position:absolute;inset:0}
 .nx-fog i{position:absolute;left:-20%;width:140%;height:45vh;bottom:-14vh;will-change:transform;
@@ -86,7 +84,7 @@ a{color:#ff6b7d;text-decoration:none;text-shadow:0 0 12px rgba(255,31,61,.25)} a
 @keyframes nxFog{from{transform:translate3d(-4%,0,0) scaleY(1)}to{transform:translate3d(4%,-3%,0) scaleY(1.12)}}
 #nx-fx{position:absolute;inset:0;width:100%;height:100%}
 .nx-vignette{position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 40%,transparent 50%,rgba(0,0,0,.78))}
-html[data-fx=off] .nx-aurora i,html[data-fx=off] .nx-fog i,html[data-fx=off] .nx-runes g{animation:none}
+html[data-fx=off] .nx-aurora i,html[data-fx=off] .nx-fog i,html[data-fx=off] .nx-runes svg,html[data-fx=low] .nx-runes svg{animation:none}
 html[data-fx=off] #nx-fx{display:none}
 html[data-fx=low] .nx-aurora i:nth-child(3),html[data-fx=low] .nx-fog i+i,html[data-fx=low] .nx-runes2{display:none}
 html[data-fx=low] .nx-runes g{animation-duration:400s}
@@ -176,7 +174,7 @@ h1::after{content:attr(data-text);position:absolute;inset:0;background:linear-gr
 main{max-width:1180px;padding:20px 16px 28px}
 .panel{position:relative;background:var(--glass);border:1px solid #000;border-radius:6px;padding:20px;margin-bottom:16px;
   box-shadow:0 18px 50px rgba(0,0,0,.6),0 0 0 1px var(--metal2),inset 0 0 0 1px rgba(255,31,61,.14),inset 0 1px 0 var(--metalhi),inset 0 0 40px rgba(0,0,0,.45);
-  -webkit-backdrop-filter:blur(10px) saturate(120%);backdrop-filter:blur(10px) saturate(120%)}
+  -webkit-backdrop-filter:blur(6px) saturate(115%);backdrop-filter:blur(6px) saturate(115%)}
 html[data-fx=low] .panel,html[data-fx=off] .panel{-webkit-backdrop-filter:none;backdrop-filter:none;background:linear-gradient(165deg,rgba(26,21,19,.96),rgba(11,9,9,.97))}
 /* carved gold corner ornaments + bevel */
 .panel::before{content:"";position:absolute;inset:3px;border-radius:4px;pointer-events:none;
